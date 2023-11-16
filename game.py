@@ -14,10 +14,10 @@ class Game:
         self.typed_text = ""
         self.start_time = time.time()
 
-    def letter_typed(self, letter: str) -> bool:
+    def typed_letter_correct(self, letter: str) -> bool:
         assert self.untyped_text is not None
-        self.typed_text += letter
         if self.untyped_text.startswith(letter):
+            self.typed_text += letter
             self.untyped_text = self.untyped_text[1:]
             return True
         self.miss_click()
